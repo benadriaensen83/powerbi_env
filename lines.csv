@@ -1,0 +1,6 @@
+﻿line,color,shiftCoordx,shiftCoordy,nodes,coordsx,coordsy,name,labelPos
+lineA,#FF0000,0,0,StationA,,,,N
+lineA,#FF0000,0,0,node,30,-4,,
+lineA,#FF0000,0,0,node,31,-3,,
+lineA,#FF0000,0,0,StationB,,,,E
+lineB,#FF0000,0,0,StationB,,,,N
