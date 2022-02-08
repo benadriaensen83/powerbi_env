@@ -39,6 +39,16 @@ export class Visual implements IVisual {
         .append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
+                var path = d3.geoPath();
+                var projection = d3.geoMercator()
+                  .scale(7000)
+                  .center([8.227512, 46.818188])
+                  .translate([width / 2, height / 2]);
+                
+                // Data and color scale
+                var data = d3.map();
+                var colorScale = d3.scaleThreshold()
+                  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000]);
         }
 
     private static parseSettings(dataView: DataView): VisualSettings {
