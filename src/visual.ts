@@ -33,13 +33,19 @@ export class Visual implements IVisual {
             height = options.viewport.height - margin.top - margin.bottom;
         /** Append the svg object to the body of the page */
         var svg = this.container
-        .append("svg")
+            .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
-        .append("g")
+            .append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
-        }
+        var path = d3.geoPath();
+        var projection = d3.geoMercator()
+            .scale(7000)
+            .center([8.227512, 46.818188])
+            .translate([width / 2, height / 2]);
+        
+    }
 
     private static parseSettings(dataView: DataView): VisualSettings {
         return VisualSettings.parse(dataView) as VisualSettings;
